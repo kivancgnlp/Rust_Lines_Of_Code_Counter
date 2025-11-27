@@ -24,7 +24,7 @@ pub(crate) fn count_number_of_source_lines(filepath: &str) -> u32 {
 
             if let Ok(count) = line_read_result{
                 if count == 0{
-                    println!("Reached end of file");
+                    //println!("Reached end of file");
                     break;
                 }
                 if determine_if_line_is_source(line.as_str()){
@@ -32,14 +32,11 @@ pub(crate) fn count_number_of_source_lines(filepath: &str) -> u32 {
                 }
             }
             else{
-                println!("Error while reading source line: {}", line_read_result.unwrap_err());
+                println!("Error while reading source line from file {} : {}", filepath, line_read_result.unwrap_err());
                 break;
             }
 
-        }
-
-
-
+        }// line counting loop
 
     }else {
         println!("Error while opening source file: {}", filepath);
