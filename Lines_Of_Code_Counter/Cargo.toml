@@ -1,0 +1,6 @@
+[package]
+name = "Lines_Of_Code_Counter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
