@@ -10,6 +10,7 @@ fn main() {
         None => {".".to_string()}
     };
 
+    println!("Discovering source files in : {}", path);
     let verbose = false;
     let mut total_line_count : u32 = 0;
     let mut file_list = Vec::new();
