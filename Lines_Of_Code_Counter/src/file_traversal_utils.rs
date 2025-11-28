@@ -54,7 +54,7 @@ pub(crate) fn list_files(path_str:&str, depth:u32, file_list: &mut Vec<(String,S
 
 }
 
-static KNOWN_EXTENSIONS:&[&str] = &["c","cpp","h","hpp","rs"]; // should be in lower case
+static KNOWN_EXTENSIONS:&[&str] = &["c","cpp","h","hpp","rs","py","v","vhd"]; // should be in lower case
 
 
 pub(crate) fn should_file_be_processed(file_name : &str) -> (bool, String){

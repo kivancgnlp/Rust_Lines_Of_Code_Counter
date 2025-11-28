@@ -6,9 +6,15 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works() {
+    fn line_begining_with_comment() {
         let result = line_utils::determine_if_line_is_source("// comment");
-        assert_eq!(result, true);
+        assert_eq!(result, false);
+    }
+
+    #[test]
+    fn line_containing_comment() {
+        let result = line_utils::determine_if_line_is_source("int main() // comment");
+        assert_eq!(result,true);
     }
 
 

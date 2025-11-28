@@ -1,11 +1,26 @@
-
+//! This module provides utility functions for analyzing source files, including determining
+//! whether a line contains source code and counting the number of source lines in a file.
 use std::io::{BufRead, BufReader};
 
+
+/// Determines if a given line of code is considered a source line.
+///
+/// # Arguments
+///
+/// * `line` - A string slice that represents a single line of text.
+///
+/// # Returns
+///
+/// * `bool` - Returns `true` if the line is a source line, and `false` if it is considered
+///   a comment line.
 pub(crate) fn determine_if_line_is_source(line:&str) -> bool {
 
-    if line.contains("//"){
+    let trimmed = line.trim();
+
+    if trimmed.starts_with("//") {
         return false;
     }
+
 
     return true;
 }
